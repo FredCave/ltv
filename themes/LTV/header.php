@@ -2,22 +2,22 @@
 <html <?php language_attributes(); ?> style="margin-top: 0px !important" data-scroll="0">
 
 <head>
-	<title>Fundación Proyecto Bachué</title>
+	<title>Le Ton Vertical</title>
     <meta name="description" content="">
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta property="og:url" content="<?php bloginfo('url'); ?>" />
     <meta property="og:type" content="Website" />
-    <meta property="og:title" content="Fundación Proyecto Bachué" />
-    <meta property="og:description" content="La fundación Proyecto Bachué es una plataforma de gestión enfocada en las artes plásticas y audiovisuales colombianas." />
-    <meta property="og:image" content="<?php bloginfo('template_url') ?>/img/logo.png" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
 
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="<?php bloginfo('url'); ?>">
-	<meta name="twitter:description" content="La fundación Proyecto Bachué es una plataforma de gestión enfocada en las artes plásticas y audiovisuales colombianas.">
-	<meta name="twitter:title" content="Fundación Proyecto Bachué">
-	<meta name="twitter:image" content="<?php bloginfo('template_url') ?>/img/logo.png">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:image" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/style.css">
@@ -37,8 +37,6 @@
 	-->
 
 	<script>
-		// Picture element HTML5 shiv
-		document.createElement( "picture" );
 		// FIX IE CONSOLE ERRORS
 		if (!window.console) console = {log: function() {}}; 
 	</script>

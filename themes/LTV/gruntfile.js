@@ -22,24 +22,6 @@ module.exports = function ( grunt ) {
 				tasks: [ "cssmin:dist" ]
 			}
 		},
-		imagemin: {                          
-			static: {                          
-				options: {                      
-					optimizationLevel: 3,
-					svgoPlugins: [{ removeViewBox: false }]
-				},
-				files: {                         
-				}
-			},
-			dynamic: {                        
-				files: [{
-					expand: true,               
-					cwd: 'assets/img/',                  
-					src: ['**/*.{png,jpg,gif}'],  
-					dest: 'img/'                  
-				}]
-			}
-		},
 		cssmin: {
 			dist: {
 				files: {
@@ -53,7 +35,6 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	// Register tasks
 	grunt.registerTask("default", ["uglify:dev"]);
