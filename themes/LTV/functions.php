@@ -66,23 +66,39 @@ function create_post_types() {
 
 // AJAX LAZY LOADING
 
-// add_action( 'wp_ajax_sections', 'section_load' );
-// add_action( 'wp_ajax_nopriv_sections', 'section_load' );
+add_action( 'wp_ajax_loader', 'ajax_load' );
+add_action( 'wp_ajax_nopriv_loader', 'ajax_load' );
 
-// function section_load () {
-    
-//     // THE $_REQUEST CONTAINS ALL THE DATA SENT VIA AJAX
-//     if ( isset($_REQUEST) ) {
-//         // $last_loaded = $_REQUEST['lastLoaded'];
-//         $new_data = include( "includes/06__collection_list.php" );
-//         echo $new_data;
-//         wp_die();
-//         // IF YOU'RE DEBUGGING, IT MIGHT BE USEFUL TO SEE WHAT WAS SENT IN THE $_REQUEST
-//         // print_r($_REQUEST);
-//     }
-//     // ALWAYS DIE IN FUNCTIONS ECHOING AJAX CONTENT
-//     wp_die();
-// }
+function ajax_load () {
+    if ( isset($_REQUEST) ) {
+        // THE $_REQUEST CONTAINS ALL THE DATA SENT VIA AJAX
+        $section = $_REQUEST['section'];
+        switch ( $section ) {
+            case "about" : 
+                $new_data = include( "includes/03_about.php" );
+                break;
+            case "concerts" : 
+                $new_data = include( "includes/04_concerts.php" );
+                break;
+            case "media" : 
+                $new_data = include( "includes/05_media.php" );
+                break;
+            case "links" : 
+                $new_data = include( "includes/06_links.php" );
+                break;
+            case "partners" : 
+                $new_data = include( "includes/07_partners.php" );
+                break;
+            default: 
+                $new_data = include( "includes/02_news.php" );
+        }
+        echo $new_data;  
+        // FOR DEBUGGING
+        // print_r($_REQUEST);
+    }
+    // ALWAYS DIE IN FUNCTIONS ECHOING AJAX CONTENT
+    wp_die();
+}
 
 // IMAGE OBJECT
 

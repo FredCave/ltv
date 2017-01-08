@@ -1,4 +1,4 @@
-<div class="main_content">
+<div class="main_content loaded" data-slug="news">
 	NEWS
 	<ul>
 		<?php 

@@ -2,22 +2,23 @@
     IN PROGRESS
 ************************************************/
 
-### SEC COLUMN – CALC TOP MARGIN AND THEN FADE IN AGENDA....
+
 
 
 /************************************************
     TO DO
 ************************************************/
+### NAVIGATION FROM PAGE TO PAGE
 
 ### HIGHLIGHT CURRENT PAGE IN MENU
 
 ### PLUGINS:
 	### MAILING LIST???
-
-### NAVIGATION FROM PAGE TO PAGE
  
 ### ADD DATE COLUMN FOR CONCERTS PAGE
 
 /************************************************
     COMPLETED
 ************************************************/
+
+### SEC COLUMN – CALC TOP MARGIN AND THEN FADE IN AGENDA....

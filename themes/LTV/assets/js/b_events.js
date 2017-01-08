@@ -14,12 +14,39 @@
 
 $( document ).ready(function() {
 
+//	1. GENERAL
+
+	// NAVIGATION
+
+	$("#main_menu a").on("click", function(e){
+		e.preventDefault();
+		// GET URL QUERY
+		var urlQuery = $(this).attr("href").split("?p=")[1];
+		if ( urlQuery === undefined ) {
+			urlQuery = "news";
+		}
+		// navManager( urlQuery );
+		History.pushState( urlQuery, "Le Ton Vertical", '?p=' + urlQuery );
+	});
 
 //	4. WINDOW EVENTS
 
 	$(window).on( "load", function(){
 		// CALCULATE SEC. MARGIN TOP
 		secMarginTop();
+		// MAIN COLUMN INIT
+		mainInit();
+		console.log( 34, History.getState() ); 
+	});
+
+// URL CHANGE
+
+	$(window).bind( "statechange", function(){
+		// GET SLUG
+		var slug = History.getState().hash.split("?p=")[1];
+		slug = slug.split("&")[0];
+		console.log( 43, slug );
+		navManager( slug );
 	});
 
 });

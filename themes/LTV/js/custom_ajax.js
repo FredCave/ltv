@@ -1,5 +1,5 @@
-function collLoad () {
-    console.log( "collLoad" );
+function ajaxLoad ( section ) {
+    console.log( "ajaxLoad", section );
     // APPEND ANIMATION
     var coll = $("#coll_content"),
         animation = $('<div class="loading"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>');
@@ -8,7 +8,8 @@ function collLoad () {
     $.ajax({
         url: myAjax.ajaxurl,
         data: {
-            'action': "sections"
+            "action"    : "loader",
+            "section"   : section
         },
         success:function(data) {
             // IF LAST CHARACTER IS 1 OR 0 – REMOVE
@@ -16,27 +17,15 @@ function collLoad () {
             if ( lastChar === 1 || lastChar === 0 ) {
                 data = data.slice(0, -1);
             }
-            // HIDE ANIMATION
-            coll.find(".loading").hide();
-            // ADD DATA + FADE IN
-            coll.html( data );
-            // RUN FUNCTIONS ON LOAD
-            gridManager();
-            collNameFilter();
-            setTimeout( function(){
-                coll.find(".content_wrapper").fadeIn(2000);
-            }, 5000 );
-            // IF MOBILE SCROLL TO TOP OF COLLECTION
-            if ( $("#wrapper").hasClass("mobile") ) {
-                var collTop = $("#coll_list").offset().top;
-                $("html,body").animate({
-                    scrollTop : collTop
-                }, 500 );
-            }
+            // console.log("Ajax success.", data);
+            // LOAD NEW SECTION IN MAIN COLUMN
+            $("#main_column").append(data);
+            // ADD LOADED CLASS TO NEW CONTENT
+            $("#main_column").find("[data-slug='" + section + "']").fadeIn(1000).addClass("loaded");
         },
         error: function(errorThrown){
             console.log(errorThrown);
-            // $("#coll_content").append(errorThrown);
+            // $("#main_column").append(errorThrown);
         }
     }); 
 

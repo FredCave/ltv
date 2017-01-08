@@ -1,4 +1,4 @@
-<div class="main_content">
+<div class="main_content" data-slug="concerts">
 	CONCERTS
 	<?php get_future_concerts(); ?>
 	<hr>
