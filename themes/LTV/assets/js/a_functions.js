@@ -36,13 +36,20 @@ function navManager ( urlQuery ) {
 	if ( current !== urlQuery ) {
 		// HIDE LOADED SECTION
 		$(".loaded").hide().removeClass("loaded");
-		// IF LOADED
-		if ( $("#main_column").find("[data-slug='" + urlQuery + "']").length ) {
-			$("#main_column").find("[data-slug='" + urlQuery + "']").fadeIn(1000).addClass("loaded");
-		} else {
-			// LOAD NEW SECTION IN MAIN COLUMN
-			ajaxLoad( urlQuery );
-		}
+		// SCROLL TO TOP
+		$("html,body").animate({
+			scrollTop: 0
+		}, 500 );
+		// AFTER SCROLL
+		setTimeout( function(){
+			// IF ALREADY LOADED BUT NOT VISIBLE
+			if ( $("#main_column").find("[data-slug='" + urlQuery + "']").length ) {
+				$("#main_column").find("[data-slug='" + urlQuery + "']").fadeIn(1000).addClass("loaded");
+			} else {
+				// LOAD NEW SECTION IN MAIN COLUMN
+				ajaxLoad( urlQuery );
+			}			
+		}, 500 );
 		// UPDATE URL
 		// window.history.pushState(urlQuery, urlQuery, '?p=' + urlQuery);
 		History.pushState( urlQuery, "Le Ton Vertical", '?p=' + urlQuery );

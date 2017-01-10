@@ -60,24 +60,9 @@ i, em {
 }
 
 #wrapper {
-    border: 2px solid black;
+/*    border: 2px solid black;*/
 /*    padding-top: 120px;*/
     position: relative;
-}
-
-#main_column {
-    border: 1px solid purple;
-    width: 70.833%;
-    height: 500px;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: -2px;
-}
-
-.main_content {
-    border: 1px solid red;
-    width: 94.117%;
 }
 
 .loading {
@@ -132,7 +117,22 @@ a, a:visited {
     MAIN COLUMN
 ************************************************/
 
+#main_column {
+/*    border: 1px solid purple;*/
+    width: 70.833%;
+    height: 500px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -2px;
+}
+
 .main_content {
+/*    border: 1px solid red;*/
+    width: 94.117%;
+    margin-top: 40px;
+    margin-bottom: 200px;
+    margin-bottom: 20vh;    
     display: none;
 }
 
@@ -140,12 +140,74 @@ a, a:visited {
     display: block;
 }
 
+h1 {
+    font-family: "Suisse Works", serif;
+    font-size: 2em;
+    margin: -16px 0 36px 13.045%;
+}
+
+.text {
+    font-family: "Suisse Works", serif;
+    line-height: 1.6;  
+    margin: -8px 0 48px 27.716%; 
+    width: 45.677%;
+}
+
+.news_text {
+/*    border: 1px solid green;*/
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.news_left_margin {
+/*    border: 1px solid blue;*/
+    width: 27.716%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.news_image_meta {
+/*    border: 1px solid blue;*/
+    width: 63.2%;
+    margin-left: 21.2%;
+    margin-top: -2px;
+    font-size: 0.75em;
+}
+
+.news_image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 36px;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+    transition: filter 3s 1s;
+}
+
+.news_post:hover .news_image img {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); 
+    transition: filter 1s;   
+}
+
+.news_image .two-thirds {
+    width: 66.667%;
+}
+
+.news_image .one-third {
+    width: 33.333%;
+}
+
+
+
+
+
 /************************************************
     SECONDARY COLUMN
 ************************************************/
 
 #secondary_column {
-    border: 1px solid blue;
+/*    border: 1px solid blue;*/
     width: 29.16667%;
     display: inline-block;
     position: absolute;
@@ -166,6 +228,7 @@ a, a:visited {
     border-bottom: 1px solid white;
     padding: 40px 0;
     position: fixed;
+    z-index: 9;
     width: 18.9%; /* ABSOLUTE WIDTH */
     right: 5.131%;
     top: 0;

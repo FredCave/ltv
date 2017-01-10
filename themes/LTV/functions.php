@@ -115,24 +115,28 @@ function image_object( $image ) {
         $large = $image['sizes'][ "large" ]; // 900
         $extralarge = $image['sizes'][ "extra-large" ]; // 1200
         $id = $image["id"];
-        
-//         $class = "landscape"; 
-//         if ( $width <= $height ) {
-//             $class = "portrait";
-//             $thumb = $image['sizes'][ "medium" ];
-//             $medium = $image['sizes'][ "large" ];
-//             $large = $image['url']; 
-//             // FIX THIS – ADD EXTRA LARGE CUSTOM SIZE
-//         } 
-
-//         echo "<img class='" . $class . " " . $added_class . "' 
-//         alt='Fundación Proyecto Bachué' 
-//         width='" . $width . "' 
-//         height='" . $height . "' 
-//         data-thm='" . $thumb . "' 
-//         data-med='" . $medium . "' 
-//         data-lrg='" . $large . "' 
-//         src=' " . $thumb . "' />";
+        // DEFAULT IS FULL WIDTH
+        if ( $height / $width >= 0.5 && $height / $width < 1 ) {
+            $class = "two-thirds";
+        } else if ( $height / $width >= 1 ) {
+            $class = "one-third";
+            // PORTRAIT MODE
+            // $thumb = $image['sizes'][ "medium" ];
+            // $medium = $image['sizes'][ "large" ];
+            // $large = $image['url']; 
+            // $extralarge =
+        } else {
+            $class = "full-width"; 
+        }
+        echo "<img class='" . $class . " ' 
+            alt='Le Ton Vertical' 
+            width='" . $width . "' 
+            height='" . $height . "' 
+            data-thm='" . $thumb . "' 
+            data-med='" . $medium . "' 
+            data-lrg='" . $large . "' 
+            data-xlg='" . $extralarge . "' 
+            src=' " . $thumb . "' />";
     endif;
 }
 

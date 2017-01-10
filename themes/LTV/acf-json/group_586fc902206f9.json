@@ -27,6 +27,24 @@
             "mime_types": ""
         },
         {
+            "key": "field_5875165749882",
+            "label": "Image Credits",
+            "name": "news_image_credits",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
             "key": "field_586fca6f4f8b1",
             "label": "News Text",
             "name": "news_text",
@@ -94,5 +112,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1483721372
+    "modified": 1484068833
 }

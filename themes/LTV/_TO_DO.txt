@@ -2,13 +2,15 @@
     IN PROGRESS
 ************************************************/
 
+## NEWS IMAGES COLOUR BASED ON VISIBILITY RATHER THAN HOVER
 
-
+### IMAGE LOAD CHECK BEFORE FADE IN ON AJAX LOADING
 
 /************************************************
     TO DO
 ************************************************/
-### NAVIGATION FROM PAGE TO PAGE
+
+
 
 ### HIGHLIGHT CURRENT PAGE IN MENU
 
@@ -22,3 +24,5 @@
 ************************************************/
 
 ### SEC COLUMN – CALC TOP MARGIN AND THEN FADE IN AGENDA....
+
+### NAVIGATION FROM PAGE TO PAGE

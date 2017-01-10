@@ -20,6 +20,10 @@ function ajaxLoad ( section ) {
             // console.log("Ajax success.", data);
             // LOAD NEW SECTION IN MAIN COLUMN
             $("#main_column").append(data);
+            // CHECK IF IMAGES HAVE LOADED
+
+
+
             // ADD LOADED CLASS TO NEW CONTENT
             $("#main_column").find("[data-slug='" + section + "']").fadeIn(1000).addClass("loaded");
         },
