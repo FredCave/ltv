@@ -1,4 +1,4 @@
-<div class="main_content loaded" data-slug="news">
+<div class="main_content" data-slug="news">
 	
 	<!-- TITLE -->
 	<h1>Le Ton Vertical</h1>
@@ -11,7 +11,7 @@
 		    while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 		        <li class="news_post">
 		        	<!-- IMAGE -->
-		        	<div class="news_image">
+		        	<div class="image">
 			        	<?php 
 			        	$image = get_field("news_image"); 
 			        	image_object($image);

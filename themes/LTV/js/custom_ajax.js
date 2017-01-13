@@ -17,15 +17,25 @@ function ajaxLoad ( section ) {
             if ( lastChar === 1 || lastChar === 0 ) {
                 data = data.slice(0, -1);
             }
-            // console.log("Ajax success.", data);
             // LOAD NEW SECTION IN MAIN COLUMN
             $("#main_column").append(data);
             // CHECK IF IMAGES HAVE LOADED
-
-
-
-            // ADD LOADED CLASS TO NEW CONTENT
-            $("#main_column").find("[data-slug='" + section + "']").fadeIn(1000).addClass("loaded");
+            console.log( 23, $("#main_column .main_content:last-child") );
+            var delay = 0;
+            $("#main_column .main_content:last-child img").on("load", function(){
+                // IF NOT YET LOADED ADD DELAY
+                if ( $(this).height() == 0 ) {
+                    delay = 500;
+                }
+                // ADD LOADED CLASS TO NEW CONTENT
+                setTimeout( function(){
+                    $("#main_column").find("[data-slug='" + section + "']").fadeIn(1000).addClass("loaded");
+                }, delay );                
+            }); 
+            // UPDATE MENU CURRENT
+            menuCurrent();
+            // MEDIA CHECK
+            mediaCheck();
         },
         error: function(errorThrown){
             console.log(errorThrown);

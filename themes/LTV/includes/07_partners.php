@@ -1,4 +1,5 @@
-<div class="main_content" data-slug="partners">
+<div id="partners" class="" data-slug="">
+	PARTNERS
 	<?php 
 		$partners_query = new WP_Query( "name=partner" );
 		if ( $partners_query->have_posts() ) :

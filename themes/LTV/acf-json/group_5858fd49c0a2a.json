@@ -5,7 +5,7 @@
         {
             "key": "field_5858fd90d5f48",
             "label": "Lieu \u2013 Lien",
-            "name": "concert_lien",
+            "name": "concert_link",
             "type": "text",
             "instructions": "Lien doit commencer par http:\/\/ ou https:\/\/",
             "required": 0,
@@ -74,5 +74,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1482227528
+    "modified": 1484236642
 }

@@ -86,9 +86,9 @@ function ajax_load () {
             case "links" : 
                 $new_data = include( "includes/06_links.php" );
                 break;
-            case "partners" : 
-                $new_data = include( "includes/07_partners.php" );
-                break;
+            // case "partners" : 
+            //     $new_data = include( "includes/07_partners.php" );
+            //     break;
             default: 
                 $new_data = include( "includes/02_news.php" );
         }
@@ -113,7 +113,7 @@ function image_object( $image ) {
         $thumb = $image['sizes'][ "thumbnail" ]; // 300
         $medium = $image['sizes'][ "medium" ]; // 600
         $large = $image['sizes'][ "large" ]; // 900
-        $extralarge = $image['sizes'][ "extra-large" ]; // 1200
+        $extralarge = $image['sizes'][ "extralarge" ]; // 1200
         $id = $image["id"];
         // DEFAULT IS FULL WIDTH
         if ( $height / $width >= 0.5 && $height / $width < 1 ) {
@@ -121,10 +121,9 @@ function image_object( $image ) {
         } else if ( $height / $width >= 1 ) {
             $class = "one-third";
             // PORTRAIT MODE
-            // $thumb = $image['sizes'][ "medium" ];
-            // $medium = $image['sizes'][ "large" ];
-            // $large = $image['url']; 
-            // $extralarge =
+            $thumb = $image['sizes'][ "medium" ];
+            $medium = $image['sizes'][ "large" ];
+            $large = $image['sizes'][ "extralarge" ]; 
         } else {
             $class = "full-width"; 
         }
@@ -218,10 +217,16 @@ function get_future_concerts () {
             ?>
             <li>
                 <?php // IF IN FUTURE
-                if ( !isPast( $date ) ) {
-                    the_title();
-                    the_field("concert_date");
-                } ?>
+                if ( !isPast( $date ) ) { ?>
+                    <p><?php the_field("concert_date"); ?></p>
+                    <p>
+                        <?php if ( get_field("concert_link") ) { ?>
+                            <a href="<?php the_field('concert_link'); ?>"><?php the_title(); ?></a>
+                        <?php } else {
+                            the_title();
+                        } ?>
+                    </p>
+                <?php } ?>
             </li>
             <?php
         endwhile;
@@ -233,16 +238,22 @@ function get_future_concerts () {
 function get_past_concerts () {
     $agenda_query = new WP_Query( "post_type=concerts" );
     if ( $agenda_query->have_posts() ) :
-        echo "<ul>";
+        echo "<ul class=''>";
         while ( $agenda_query->have_posts() ) : $agenda_query->the_post(); 
             $date = get_field("concert_date");
             ?>
             <li>
                 <?php // IF IN PAST
-                if ( isPast( $date ) ) {
-                    the_title();
-                    the_field("concert_date");
-                } ?>
+                if ( isPast( $date ) ) { ?>
+                    <p><?php the_field("concert_date"); ?></p>
+                    <p>
+                        <?php if ( get_field("concert_link") ) { ?>
+                            <a href="<?php the_field('concert_link'); ?>"><?php the_title(); ?></a>
+                        <?php } else {
+                            the_title();
+                        } ?>
+                    </p>
+                <?php } ?>
             </li>
             <?php
         endwhile;

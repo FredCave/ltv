@@ -2,26 +2,64 @@
     IN PROGRESS
 ************************************************/
 
-## NEWS IMAGES COLOUR BASED ON VISIBILITY RATHER THAN HOVER
-
-### IMAGE LOAD CHECK BEFORE FADE IN ON AJAX LOADING
+### MEDIA – POPUP??
+	### POPUP JUST MUTE OPTION + LINK BACK TO MEDIA PAGE
 
 /************************************************
     TO DO
 ************************************************/
 
+### MAILING LIST – PLUGINS
 
 
-### HIGHLIGHT CURRENT PAGE IN MENU
 
-### PLUGINS:
-	### MAILING LIST???
- 
-### ADD DATE COLUMN FOR CONCERTS PAGE
+### LINKS HIERARCHY
+
+### PARTNERS
+
+### ABOUT FOR EACH BAND
+
+### NEWS TAGS TO LINK TO RELEVANT ABOUT SECTION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /************************************************
     COMPLETED
 ************************************************/
+
+### IMAGE LOAD CHECK BEFORE FADE IN ON AJAX LOADING
+
+### CONCERTS ARCHIVE
+
+### NEWS IMAGES COLOUR WHEN ENTIRELY VISIBLE
+
+### IMAGES FOR EACH SECTION
+
+### IMAGE MANAGER FUNCTION / LAZYLOADING
+
+### HIGHLIGHT CURRENT PAGE IN MENU
 
 ### SEC COLUMN – CALC TOP MARGIN AND THEN FADE IN AGENDA....
 

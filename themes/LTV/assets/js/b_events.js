@@ -2,8 +2,6 @@
     
 	EVENTS
 
-
-
 		4. 	WINDOW EVENTS
 			4.1. MAIN WINDOW EVENTS
 			4.2. MANUAL SCROLL EVENTS
@@ -27,6 +25,8 @@ $( document ).ready(function() {
 		}
 		// navManager( urlQuery );
 		History.pushState( urlQuery, "Le Ton Vertical", '?p=' + urlQuery );
+		// HIDE ANY HIGHLIGHTED LIs
+		$("#main_menu .highlighter").css("opacity","0");
 	});
 
 //	4. WINDOW EVENTS
@@ -36,8 +36,17 @@ $( document ).ready(function() {
 		secMarginTop();
 		// MAIN COLUMN INIT
 		mainInit();
-		console.log( 34, History.getState() ); 
-	});
+		// console.log( 34, History.getState() ); 
+		// MENU CURRENT
+		menuCurrent();
+		// LOAD VISIBLE IMAGES
+		imageManager(0);
+		// MEDIA CHECK
+		mediaCheck();
+	}).on("scroll", _.throttle(function() {
+		var winScroll = $(window).scrollTop();
+		imageManager( winScroll );
+	}, 500 ));
 
 // URL CHANGE
 
@@ -45,7 +54,7 @@ $( document ).ready(function() {
 		// GET SLUG
 		var slug = History.getState().hash.split("?p=")[1];
 		slug = slug.split("&")[0];
-		console.log( 43, slug );
+		// console.log( 43, slug );
 		navManager( slug );
 	});
 

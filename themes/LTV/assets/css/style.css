@@ -1,9 +1,3 @@
-/*
-Theme Name:   	LE TON VERTICAL
-Author:       	Fred Cave
-Author URI:		http://www.fredcave.com
-Version:        2016.07.29
-*/
 
 #wpadminbar {
     display: none !important;
@@ -60,9 +54,10 @@ i, em {
 }
 
 #wrapper {
-/*    border: 2px solid black;*/
+/*    border: 2px solid red;*/
 /*    padding-top: 120px;*/
     position: relative;
+    min-height: 100vh;
 }
 
 .loading {
@@ -111,7 +106,14 @@ i, em {
 a, a:visited { 
     color: white;
     text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
 }
+
+a:hover { 
+    border-bottom: 1px solid white !important;
+}
+
 
 /************************************************
     MAIN COLUMN
@@ -120,9 +122,9 @@ a, a:visited {
 #main_column {
 /*    border: 1px solid purple;*/
     width: 70.833%;
-    height: 500px;
+/*    height: 500px;*/
     display: inline-block;
-    position: absolute;
+/*    position: absolute;*/
     top: 0;
     left: -2px;
 }
@@ -146,11 +148,20 @@ h1 {
     margin: -16px 0 36px 13.045%;
 }
 
+h2 {
+    margin-bottom: 18px;     
+}
+
 .text {
+/*    border: 1px solid green;*/
     font-family: "Suisse Works", serif;
     line-height: 1.6;  
     margin: -8px 0 48px 27.716%; 
     width: 45.677%;
+}
+
+.text hr { 
+    margin: 36px 0; 
 }
 
 .news_text {
@@ -175,31 +186,40 @@ h1 {
     font-size: 0.75em;
 }
 
-.news_image img {
+.image img {
     width: 100%;
     height: auto;
     margin-bottom: 36px;
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-    transition: filter 3s 1s;
+/*    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);*/
+/*    transition: filter 3s 1s;*/
+    transition: filter 2s;
 }
 
-.news_post:hover .news_image img {
-    -webkit-filter: grayscale(0%);
-            filter: grayscale(0%); 
-    transition: filter 1s;   
-}
-
-.news_image .two-thirds {
+.image .two-thirds {
     width: 66.667%;
 }
 
-.news_image .one-third {
+.image .one-third {
     width: 33.333%;
 }
 
+#concerts ul {
+    margin-bottom: 36px;
+}
 
+.media_audio {
+    width: 72.284%;
+}
 
+#media .media_single {
+/*    border: 1px solid pink;*/
+    width: 100%;
+}
+
+#media .media_single iframe {
+    width: 100%;
+}
 
 
 /************************************************
@@ -214,7 +234,7 @@ h1 {
     top: 0;
     right: -2px;
 /*    padding-top: 250px;*/
-    height: 1000px;
+/*    height: 1000px;*/
 }
 
 #secondary_column > * {
@@ -238,6 +258,20 @@ h1 {
 #main_menu li {
     margin-bottom: 8px;
     text-transform: uppercase;
+    position: relative;
+}
+
+.highlighter {
+/*    border: 1px solid green;*/
+    position: absolute;
+    top: 7px;
+    left: -20px;
+    width: 6px;
+    height: 6px;
+    border-radius: 9px;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 #secondary_column .loading {
@@ -248,14 +282,24 @@ h1 {
     display: none;
 }
 
+/************************************************
+    FOOTER
+************************************************/
 
+#footer {
+/*    border-top: 1px solid pink;*/
+}
 
+#footer hr {
+    width: 100%;
+}
 
-
-
-
-
-
+#partners {
+/*    border: 1px solid pink;*/
+    margin: 40px 0 0 18.337%;
+    width: 63.246%;
+    height: 100px;
+}
 
 
 
