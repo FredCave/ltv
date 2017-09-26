@@ -1,0 +1,686 @@
+/* line 1, style.scss */
+#wpadminbar {
+  display: none !important;
+}
+
+/************************************************
+
+    CSS RESET
+
+************************************************/
+/* line 15, style.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 15, style.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 15, style.scss */
+body {
+  line-height: 1;
+}
+
+/* line 15, style.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 15, style.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 15, style.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 15, style.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/************************************************
+    HOLDING
+************************************************/
+/* line 21, style.scss */
+#holding {
+  background-color: white;
+  font: sans-serif;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+}
+
+/* line 30, style.scss */
+#holding p {
+  margin: 32px 36px 0px 36px;
+  font-family: sans-serif;
+}
+
+/* line 35, style.scss */
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis steps(4, end) 2000ms infinite;
+  content: "\2026";
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+/*********************************************
+
+    GENERAL
+
+*********************************************/
+/* line 64, style.scss */
+html, body {
+  width: 100%;
+  /*    height: 100%;*/
+  overflow-x: hidden;
+  background-color: #eee;
+  font-family: courier, serif;
+  font-weight: 400;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+@media (max-width: 1280px) {
+  /* line 76, style.scss */
+  html, body {
+    font-size: 1em;
+  }
+}
+/* line 81, style.scss */
+a, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 86, style.scss */
+a:hover {
+  border-bottom: 1px solid black;
+}
+
+/* line 90, style.scss */
+ul, li {
+  list-style: none;
+}
+
+/* line 94, style.scss */
+h1, h2, h3, h4 {
+  font-family: "Franklin Gothic", sans-serif;
+}
+
+/* line 98, style.scss */
+h1, h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* line 103, style.scss */
+h1 {
+  /*    border-bottom: 1px solid black;*/
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 1.2em;
+}
+
+/* line 110, style.scss */
+h4 {
+  font-size: 0.6em;
+}
+
+/* line 118, style.scss */
+.en {
+  display: none;
+}
+
+/* line 122, style.scss */
+.loader {
+  text-align: center;
+  padding: 8px 0;
+  transition: all 0.5s;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+/* line 130, style.scss */
+.loader div {
+  width: 12px;
+  height: 12px;
+  background-color: #999;
+  margin: 0 6px;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+/* line 140, style.scss */
+.loader .bounce1 {
+  animation-delay: -0.32s;
+}
+/* line 144, style.scss */
+.loader .bounce2 {
+  animation-delay: -0.16s;
+}
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+/*********************************************
+
+    NAV
+
+*********************************************/
+/* line 171, style.scss */
+#sidebar_wrapper {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  width: 25%;
+  min-width: 300px;
+  height: 100%;
+  transition: right 1s;
+}
+
+/* line 183, style.scss */
+#sidebar {
+  background-color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+  font-family: "Franklin Gothic", helvetica, arial, sans-serif;
+  padding-top: 24px;
+  border-left: 1px solid black;
+  overflow-y: auto;
+}
+/* line 197, style.scss */
+#sidebar > * {
+  margin-left: 24px;
+  margin-bottom: 24px;
+  width: calc( 100% - 48px );
+}
+/* line 202, style.scss */
+#sidebar #lang_toggle {
+  width: auto;
+}
+/* line 205, style.scss */
+#sidebar a, #sidebar a:visited {
+  border-bottom: 0px;
+}
+
+/* line 210, style.scss */
+#sidebar_toggle {
+  border: 1px solid black;
+  border-top: 0px;
+  border-right: 0px;
+  background-color: white;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: -48px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: none;
+}
+/* line 223, style.scss */
+#sidebar_toggle img {
+  width: 78%;
+  margin: 10% 0 0 10%;
+  transition: all 1s;
+}
+
+@media (max-width: 1024px) {
+  /* line 231, style.scss */
+  #sidebar_toggle {
+    display: block;
+  }
+}
+/* line 236, style.scss */
+#nav {
+  /*    border: 1px solid blue;*/
+}
+
+/* line 240, style.scss */
+#projects_hidden {
+  display: none;
+}
+
+/* line 244, style.scss */
+#projects_hidden li {
+  margin-left: 36px;
+}
+
+/* line 248, style.scss */
+#sidebar_upcoming > div {
+  margin-bottom: 12px;
+}
+
+/* line 252, style.scss */
+#lang_toggle {
+  position: absolute;
+  right: 24px;
+}
+
+/* line 257, style.scss */
+#sidebar_social_media a {
+  /*    border: 1px solid purple;*/
+  margin-right: 12px;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+}
+
+/* line 265, style.scss */
+#sidebar_social_media img {
+  width: auto;
+  height: 100%;
+}
+
+/* line 270, style.scss */
+#soundcloud_playlist {
+  border: 1px solid black;
+  overflow: hidden;
+  width: calc(100% - 48px);
+  height: 450px;
+}
+/* line 275, style.scss */
+#soundcloud_playlist iframe {
+  width: 99.9%;
+}
+
+/* line 280, style.scss */
+#newsletter_popup {
+  border: 1px solid black;
+  background-color: white;
+  position: fixed;
+  z-index: 9;
+  top: 48%;
+  left: 37.5%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 400px;
+  height: auto;
+  display: none;
+}
+/* line 291, style.scss */
+#newsletter_popup div {
+  /*        border: 1px solid red;*/
+  width: 90%;
+  margin: 5%;
+}
+/* line 295, style.scss */
+#newsletter_popup div label {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  padding-left: 0;
+}
+/* line 300, style.scss */
+#newsletter_popup div input {
+  border: 1px solid black;
+  font-size: 1.1em;
+  padding: 6px 8px;
+  /*width: calc( 100% - 14px );*/
+  width: 100%;
+  margin-bottom: 16px;
+}
+/* line 308, style.scss */
+#newsletter_popup div input[type="submit"] {
+  width: 100%;
+}
+/* line 312, style.scss */
+#newsletter_popup #newsletter_close {
+  position: absolute;
+  margin: 0;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+/* line 321, style.scss */
+#newsletter_popup #newsletter_close img {
+  width: 100%;
+  height: 100%;
+}
+
+/*********************************************
+
+    MAIN SECTION
+
+*********************************************/
+/* line 334, style.scss */
+#wrapper {
+  /*    border: 1px solid pink;*/
+  width: 75%;
+  max-width: calc( 100% - 300px );
+  font-size: 0.9em;
+  transition: width 1s, max-width 1s;
+}
+
+/* line 342, style.scss */
+#logo_wrapper {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+/* line 347, style.scss */
+#logo_wrapper img {
+  margin: 24px 0 24px 64px;
+  width: 33%;
+  max-width: 250px;
+  min-width: 120px;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  /* line 356, style.scss */
+  #logo_wrapper img {
+    margin-left: 16.7%;
+  }
+}
+/* line 361, style.scss */
+.main_item {
+  /*    background-color: #eee;*/
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 36px;
+  border-bottom: 1px solid black;
+}
+
+/* line 372, style.scss */
+section:last-child .main_item {
+  padding-bottom: 120px;
+}
+
+/* line 376, style.scss */
+.main_image img {
+  width: 67%;
+  height: auto;
+  margin: 24px 0 0px 0;
+}
+
+/* line 382, style.scss */
+.main_image .one_third {
+  width: 50%;
+}
+
+/* line 386, style.scss */
+.main_image .two_thirds {
+  width: 67%;
+}
+
+/* line 390, style.scss */
+.main_image .full_width {
+  width: 75%;
+}
+
+/* line 394, style.scss */
+.item_content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 12px;
+}
+
+/* line 403, style.scss */
+.close {
+  /*    border: 1px solid orange;*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-image: url("../img/close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* line 416, style.scss */
+.title_wrapper {
+  width: 100%;
+  text-align: center;
+  padding-top: 16px;
+}
+
+/* line 422, style.scss */
+.info_wrapper {
+  /*    border: 1px solid blue;*/
+  position: relative;
+  /*    margin-top: 8px; */
+}
+
+/* line 428, style.scss */
+.image_credit {
+  width: 25%;
+  margin: 0 0 12px 12px;
+  position: absolute;
+  top: 3px;
+}
+
+/* line 435, style.scss */
+.news_title {
+  margin: 0 0 12px 30%;
+}
+
+@media (max-width: 1280px) {
+  /* line 440, style.scss */
+  .news_title {
+    margin-left: 16.7%;
+  }
+}
+/* line 445, style.scss */
+.text_block, .info_wrapper iframe {
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1280px) {
+  /* line 452, style.scss */
+  .text_block, .info_wrapper iframe {
+    width: 67%;
+    margin-left: 16.7%;
+  }
+}
+/* line 458, style.scss */
+.text_block iframe {
+  width: 100%;
+}
+
+/* line 463, style.scss */
+.text_block p {
+  margin-bottom: 12px;
+}
+/* line 466, style.scss */
+.text_block a {
+  border-bottom: 1px solid black;
+}
+
+/* line 471, style.scss */
+#soundcloud iframe {
+  margin-top: 44px;
+}
+
+/* line 475, style.scss */
+#project_list {
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* line 482, style.scss */
+#project_list li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+/* line 487, style.scss */
+#project_wrapper {
+  min-height: 80px;
+}
+/* line 489, style.scss */
+#project_wrapper h1 {
+  display: block;
+  text-align: center;
+}
+
+/* line 495, style.scss */
+#project_wrapper .title_wrapper h1 {
+  margin-bottom: 0px;
+}
+
+/* line 499, style.scss */
+#concerts .no_concerts {
+  text-align: center;
+}
+
+/* line 503, style.scss */
+.upcoming_concert {
+  margin-bottom: 12px;
+}
+
+/* line 507, style.scss */
+.concert, .project_albums {
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 12px;
+}
+
+/* line 513, style.scss */
+.concert > div {
+  /*    border: 1px solid blue;*/
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+/* line 520, style.scss */
+.concert > div:last-child {
+  width: 45%;
+}
+
+/* line 524, style.scss */
+.concert_group {
+  text-transform: uppercase;
+}
+
+/* line 529, style.scss */
+.album {
+  /*    border-bottom: 1px solid black;
+      padding-bottom: 24px;*/
+  margin-bottom: 24px;
+}
+
+/* line 536, style.scss */
+.album_column {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 542, style.scss */
+.album_column div, .album_column p, .album_column h1 {
+  width: 90%;
+  margin: 0 2.5%;
+}
+
+/* line 548, style.scss */
+.album_column:last-child {
+  margin-right: 0%;
+}
+
+/* line 552, style.scss */
+.album img {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 0;
+}
+
+/* line 559, style.scss */
+.album p.album_title {
+  text-transform: uppercase;
+}
+
+/* line 563, style.scss */
+.album .album_info {
+  font-family: "Frank", "Franklin Gothic", helvetica, arial, sans-serif;
+  font-size: 0.8em;
+  margin: 0;
+}
+
+/* line 569, style.scss */
+.album_image:hover {
+  border: 0;
+}
+
+/* line 573, style.scss */
+.album_buy {
+  display: inline-block;
+  margin: 8px 0 12px 0;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+/* line 580, style.scss */
+.album_logos {
+  margin-top: 12px;
+}
+
+/* line 584, style.scss */
+.album_logos li {
+  /*    border: 1px solid green;*/
+  display: inline-block;
+  margin: 12px 12px 0 0;
+  width: 64px;
+  vertical-align: middle;
+}
+
+/* line 592, style.scss */
+#links ul {
+  margin-bottom: 12px;
+}
+
+/* line 596, style.scss */
+.project_album {
+  display: inline-block;
+  width: 30%;
+  margin-right: 3%;
+}
+/* line 600, style.scss */
+.project_album img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 4px;
+}
